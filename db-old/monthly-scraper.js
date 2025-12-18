@@ -128,12 +128,12 @@ class MonthlyECHRScraper {
 						this.stats.found++;
 						consecutiveSkips = 0; // Reset counter
 						
-						log(`   📦 Added to queue (${this.batchQueue.length} cases | ${this.attemptCounter}/150 attempts)`, true);
+						log(`   📦 Added to queue (${this.batchQueue.length} cases | ${this.attemptCounter}/250 attempts)`, true);
 					} else {
 						// Not found - increment skip counter
 						consecutiveSkips++;
 						this.stats.notFound++;
-						log(`   ⚠️  Skips: ${consecutiveSkips}/${this.maxConsecutiveSkips} | Attempts: ${this.attemptCounter}/150`, true);
+						log(`   ⚠️  Skips: ${consecutiveSkips}/${this.maxConsecutiveSkips} | Attempts: ${this.attemptCounter}/250`, true);
 					}
 					
 					// Write batch after 100 attempts (regardless of success/failure)
@@ -156,7 +156,7 @@ class MonthlyECHRScraper {
 				currentNumber++;
 
 				// Rate limiting
-				await this.sleep(400);
+				await this.sleep(250);
 
 				// Progress update every 25 cases
 				if (this.stats.totalChecked % 25 === 0) {
