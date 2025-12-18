@@ -1,0 +1,11 @@
+{
+  "name": "echr-db-scraper",
+  "compatibility_date": "2024-01-01",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "echr-db",
+      "database_id": "141a3109-a007-4ba6-8ead-bc9649276011"
+    }
+  ]
+}
