@@ -156,7 +156,7 @@ class MonthlyECHRScraper {
 				currentNumber++;
 
 				// Rate limiting
-				await this.sleep(250);
+				await this.sleep(0);
 
 				// Progress update every 25 cases
 				if (this.stats.totalChecked % 25 === 0) {
