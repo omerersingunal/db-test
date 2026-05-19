@@ -20,10 +20,24 @@ async function scrapeECHRApplication(applicationNumber, applicationYear) {
 		const page = await context.newPage();
 
 		// Navigate to the URL
-		await page.goto(url, { 
+		// await page.goto(url, { 
+		// 	waitUntil: 'domcontentloaded',
+		// 	timeout: 15000 
+		// });
+
+				// Navigate to the URL
+		const response = await page.goto(url, { 
 			waitUntil: 'domcontentloaded',
 			timeout: 15000 
 		});
+
+		// DEBUG: log response status + page content
+		console.log('STATUS:', response?.status());
+		console.log('FINAL URL:', page.url());
+
+		const html = await page.content();
+		console.log('PAGE HTML:', html);
+		// ////////////////////////////////
 
 		// Check if ResultPanel exists (page loaded successfully)
 		const resultPanelExists = await page.$('#ResultPanel');
